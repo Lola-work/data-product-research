@@ -21,7 +21,7 @@ that confirms it.
 
 | Date | Report | Thesis |
 |---|---|---|
-| 2026-07 | [The Literature Data Product in 2026](2026-07-literature-ai/) | Elsevier runs a 38.4% margin; Clarivate just sold its Life Sciences arm for $600m. Both own proprietary content. So ownership was never the moat. |
+| 2026-07 | [The Literature Data Product in 2026](https://lola-work.github.io/data-product-research/2026-07-literature-ai/) | Elsevier runs a 38.4% margin; Clarivate just sold its Life Sciences arm for $600m. Both own proprietary content. So ownership was never the moat. |
 
 ---
 
