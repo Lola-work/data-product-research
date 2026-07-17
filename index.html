@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Product Research</title>
+<meta name="description" content="Market research on data products in life sciences R&D. Visual explainers, primary sources, opinionated.">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #fafaf7;
+    color: #2d2d2d;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.6;
+  }
+  section {
+    padding: 60px 40px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center;
+  }
+  section.hero { min-height: 100vh; }
+  section.light { min-height: 60vh; }
+  .inner { max-width: 700px; width: 100%; }
+
+  h1 { font-size: 2.3rem; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.6px; }
+  .subtitle { font-size: 1rem; color: #999; margin-bottom: 24px; letter-spacing: 0.3px; }
+  h2 { font-size: 1.4rem; font-weight: 600; color: #4a4a4a; margin-bottom: 14px; }
+  .eyebrow {
+    font-size: 0.75rem; color: #aaa; letter-spacing: 1.5px;
+    text-transform: uppercase; margin-bottom: 10px; font-weight: 600;
+  }
+  p { font-size: 0.95rem; color: #555; margin-bottom: 14px; }
+  p.lead { font-size: 1.05rem; color: #666; }
+  .hint { font-size: 0.85rem; color: #999; }
+  .accent { color: #2b5797; font-weight: 600; }
+
+  .card {
+    background: #fff; border: 2px solid #ddd;
+    border-radius: 10px 14px 12px 8px;
+    padding: 24px; box-shadow: 2px 3px 0 #e8e8e4; text-align: center;
+  }
+  .card.b { border-radius: 13px 9px 14px 11px; }
+  .card.c { border-radius: 8px 13px 9px 14px; }
+
+  .section-arrow { padding: 20px 0; display: flex; justify-content: center; }
+  svg.sketchy { overflow: visible; max-width: 100%; }
+  svg.sketchy path { stroke: #888; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  svg.sketchy path:not([fill]) { fill: none; }
+  svg text { font-family: -apple-system, system-ui, sans-serif; }
+
+  /* report list */
+  .reports { margin: 24px 0 0; display: flex; flex-direction: column; gap: 16px; }
+  a.report {
+    display: block; text-decoration: none; text-align: left;
+    background: #fff; border: 2px solid #ddd;
+    border-radius: 11px 9px 13px 10px;
+    padding: 22px 24px; box-shadow: 2px 3px 0 #e8e8e4;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  }
+  a.report:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 5px 0 #e4e4e0;
+    border-color: #c9d6e8;
+  }
+  a.report .date {
+    font-size: 0.75rem; color: #aaa; letter-spacing: 1px;
+    text-transform: uppercase; font-weight: 600; margin-bottom: 6px;
+  }
+  a.report h3 { font-size: 1.15rem; font-weight: 600; color: #2d2d2d; margin-bottom: 8px; }
+  a.report .thesis { font-size: 0.9rem; color: #666; margin-bottom: 10px; }
+  a.report .meta { font-size: 0.8rem; color: #aaa; }
+  a.report .meta .tag {
+    display: inline-block; border: 1.5px solid #e0e0dc;
+    border-radius: 5px 7px 5px 8px; padding: 1px 7px; margin-right: 6px; color: #999;
+  }
+
+  .planned {
+    background: transparent; border: 2px dashed #ddd; box-shadow: none;
+    border-radius: 11px 9px 13px 10px; padding: 20px 24px; text-align: left;
+  }
+  .planned .date { font-size: 0.75rem; color: #bbb; letter-spacing: 1px;
+    text-transform: uppercase; font-weight: 600; margin-bottom: 6px; }
+  .planned h3 { font-size: 1.05rem; font-weight: 600; color: #aaa; margin-bottom: 6px; }
+  .planned p { font-size: 0.85rem; color: #bbb; margin: 0; }
+
+  .principles { text-align: left; max-width: 560px; margin: 20px auto 0; }
+  .principles .item {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 12px 0; border-bottom: 1px dashed #e0e0dc;
+  }
+  .principles .item:last-child { border-bottom: none; }
+  .principles strong { font-size: 0.92rem; color: #4a4a4a; }
+  .principles span { font-size: 0.85rem; color: #888; }
+  .tick { flex-shrink: 0; margin-top: 3px; }
+
+  footer {
+    padding: 40px; text-align: center; font-size: 0.82rem; color: #aaa;
+    border-top: 1px dashed #e0e0dc;
+  }
+  footer a { color: #888; }
+</style>
+</head>
+<body>
+
+<!-- HERO: the running thesis -->
+<section class="hero">
+  <div class="inner">
+    <div class="eyebrow">Field notes</div>
+    <h1>Data Product Research</h1>
+    <p class="subtitle">Life sciences R&amp;D · literature, evidence, and the things built on top of them</p>
+
+    <p class="lead">A running argument, tested one market at a time:</p>
+
+    <div class="card b" style="max-width:580px; margin:20px auto 0; border-color:#c9d6e8">
+      <p style="font-size:1.08rem; color:#444; margin:0">
+        For thirty years the product was the interface. AI ate the interface. What's left worth paying for is
+        <span class="accent">structured, rights-cleared, traceable data delivered into a workflow someone can be audited on</span>.
+      </p>
+    </div>
+
+    <p class="hint" style="margin-top:24px">Each report is a visual explainer. Every claim traces to a primary source. Where the evidence is thin, it says so.</p>
+
+    <div style="margin-top:30px">
+      <svg width="40" height="50" viewBox="0 0 40 50" class="sketchy">
+        <path d="M20 2 C19 15, 21 30, 20 42" stroke="#aaa" stroke-width="2"/>
+        <path d="M13 35 L20 45 L27 35" stroke="#aaa" stroke-width="2"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- THE REPORTS -->
+<section>
+  <div class="inner">
+    <div class="eyebrow">The reports</div>
+    <h2>Evidence for the argument</h2>
+    <p>Each one takes a market, follows the money, and asks whether the thesis survives contact with it.</p>
+
+    <div class="reports">
+
+      <a class="report" href="2026-07-literature-ai/">
+        <div class="date">July 2026</div>
+        <h3>The Literature Data Product in 2026</h3>
+        <p class="thesis">
+          Elsevier runs a 38.4% margin. Clarivate just sold its Life Sciences arm for $600m. Both own
+          proprietary content — Clarivate says 97% of its revenue is proprietary. So ownership was never
+          the moat. Here's what was.
+        </p>
+        <div class="meta">
+          <span class="tag">scholarly publishing</span>
+          <span class="tag">agentic AI</span>
+          <span class="tag">provenance</span>
+          <br style="line-height:2">
+          8 screens · <span style="color:#2b5797">sources traced ✓</span>
+        </div>
+      </a>
+
+      <div class="planned">
+        <div class="date">Next</div>
+        <h3>Untitled</h3>
+        <p>Nothing published yet. Replace this block when the next report lands, or delete it.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="section-arrow">
+  <svg width="40" height="50" viewBox="0 0 40 50" class="sketchy">
+    <path d="M20 2 C21 15, 19 30, 20 42" stroke="#aaa" stroke-width="2"/>
+    <path d="M13 35 L20 45 L27 35" stroke="#aaa" stroke-width="2"/>
+  </svg>
+</div>
+
+<!-- HOW THESE ARE MADE -->
+<section>
+  <div class="inner">
+    <div class="eyebrow">Method</div>
+    <h2>How these are made</h2>
+    <p>The reports argue that provenance is the moat. It would be embarrassing not to practise it.</p>
+
+    <div class="card" style="text-align:left; padding:22px 26px">
+      <div class="principles">
+        <div class="item">
+          <svg width="18" height="18" viewBox="0 0 20 20" class="sketchy tick"><path d="M4 11 C6 13, 7 15, 8 16 C11 10, 14 6, 17 3" stroke="#7bc47f" stroke-width="2.4"/></svg>
+          <div><strong>Filings over commentary.</strong> <span>Company results and regulator documents first. Vendor press releases are treated as claims, not facts. Analyst market-sizing is treated with suspicion.</span></div>
+        </div>
+        <div class="item">
+          <svg width="18" height="18" viewBox="0 0 20 20" class="sketchy tick"><path d="M4 11 C6 13, 7 15, 8 16 C11 10, 14 6, 17 3" stroke="#7bc47f" stroke-width="2.4"/></svg>
+          <div><strong>Every report ships a sources file.</strong> <span>Claim by claim, with a confidence rating and the date it was verified. Linked from the report itself.</span></div>
+        </div>
+        <div class="item">
+          <svg width="18" height="18" viewBox="0 0 20 20" class="sketchy tick"><path d="M4 11 C6 13, 7 15, 8 16 C11 10, 14 6, 17 3" stroke="#7bc47f" stroke-width="2.4"/></svg>
+          <div><strong>Estimated data is labelled on the chart.</strong> <span>Not in a footnote. A visual argument shouldn't smooth a curve the evidence doesn't support.</span></div>
+        </div>
+        <div class="item">
+          <svg width="18" height="18" viewBox="0 0 20 20" class="sketchy tick"><path d="M4 11 C6 13, 7 15, 8 16 C11 10, 14 6, 17 3" stroke="#2b5797" stroke-width="2.4"/></svg>
+          <div><strong>Gaps are stated.</strong> <span>Each sources file ends with what couldn't be verified. If the thesis rests on something soft, that's the reader's business.</span></div>
+        </div>
+        <div class="item">
+          <svg width="18" height="18" viewBox="0 0 20 20" class="sketchy tick"><path d="M4 11 C6 13, 7 15, 8 16 C11 10, 14 6, 17 3" stroke="#2b5797" stroke-width="2.4"/></svg>
+          <div><strong>Interpretation is flagged as mine.</strong> <span>The financials belong to the companies. The argument doesn't. Where I'm reading into the numbers, the sources file says so.</span></div>
+        </div>
+        <div class="item">
+          <svg width="18" height="18" viewBox="0 0 20 20" class="sketchy tick"><path d="M4 11 C6 13, 7 15, 8 16 C11 10, 14 6, 17 3" stroke="#2b5797" stroke-width="2.4"/></svg>
+          <div><strong>Nothing gets quietly edited.</strong> <span>Corrections are commits. The history is public — including the bits I got wrong.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="hint" style="margin-top:20px">
+      Found an error? <a href="https://github.com/[YOUR-USERNAME]/data-product-research/issues" style="color:#2b5797; font-weight:600">Open an issue</a>. Corrections get credited.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p style="margin:0">
+    [YOUR NAME] · <a href="https://github.com/[YOUR-USERNAME]/data-product-research">source on GitHub</a>
+  </p>
+  <p style="margin:8px 0 0; font-size:0.78rem; color:#bbb">
+    Reports are point-in-time. Markets move; the dates are load-bearing.
+  </p>
+</footer>
+
+</body>
+</html>
